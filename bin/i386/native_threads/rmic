@@ -1,0 +1,22 @@
+#!/bin/sh
+
+#
+# Copyright 2002 Sun Microsystems, Inc. All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+
+# @(#)rmic.sh	1.7 01/12/12
+#
+# Copyright (c) 1997-8 by Sun Microsystems, Inc.
+# All rights reserved.
+#
+
+#
+# source a script that extracts RUNTIME_ARGS and APP_ARGS 
+# 
+. "`dirname \"$0\"`"/.extract_args 
+
+#
+# Run the stub compiler
+#
+eval exec \"`dirname "$0"`\"/java "$RUNTIME_ARGS" sun.rmi.rmic.Main "$APP_ARGS"

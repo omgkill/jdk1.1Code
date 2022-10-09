@@ -1,0 +1,14 @@
+#! /bin/sh
+#
+# @(#)jdb.sh	1.14 01/12/12
+#
+# Copyright 2002 Sun Microsystems, Inc. All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+
+# quote the arguments to handle spaces and other trouble characters
+for a do
+  args="$args '$a'"
+done
+
+eval exec "`dirname \"$0\"`/java_g" sun.tools.ttydebug.TTY "$args"

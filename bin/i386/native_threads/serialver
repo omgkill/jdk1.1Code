@@ -1,0 +1,30 @@
+#!/bin/sh
+
+#
+# Copyright 2002 Sun Microsystems, Inc. All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+
+# @(#)serialver.sh	1.9 01/12/12
+#
+# Copyright (c) 1997-8 by Sun Microsystems, Inc.
+# All rights reserved.
+#
+
+#
+# Check for properties
+#
+if [ ! -r "$JAVA_HOME/lib/serialver.properties" ] ; then
+    echo "Could not read properties file: $JAVA_HOME/lib/serialver.properties" 1>&2 
+    exit 1
+fi
+
+#
+# source a script that extracts RUNTIME_ARGS and APP_ARGS 
+# 
+. "`dirname \"$0\"`"/.extract_args 
+
+#
+# Run the serial version UID utility
+#
+eval exec \"`dirname "$0"`\"/java -ms8m "$RUNTIME_ARGS" sun.tools.serialver.SerialVer "$APP_ARGS"

@@ -1,0 +1,22 @@
+#!/bin/sh
+
+#
+# @(#)javac.sh	1.20 01/12/12
+#
+# Copyright 2002 Sun Microsystems, Inc. All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+
+#
+# Copyright (c) 1997-8 by Sun Microsystems, Inc.
+# All rights reserved.
+#
+# 
+# source a script that extracts RUNTIME_ARGS and APP_ARGS 
+# 
+. "`dirname \"$0\"`"/.extract_args 
+
+#
+# Run the compiler
+# 
+eval exec \"`dirname "$0"`\"/java "$RUNTIME_ARGS" -ms8m "$RUNTIME_ARGS" sun.tools.javac.Main  "$APP_ARGS"

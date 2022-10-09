@@ -1,0 +1,49 @@
+/*
+ * @(#)CloneNotSupportedException.java	1.5 01/12/12
+ *
+ * Copyright 2002 Sun Microsystems, Inc. All rights reserved.
+ * SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+ */
+
+package java.lang;
+
+/**
+ * Thrown to indicate that the <code>clone</code> method in class 
+ * <code>Object</code> has been called to clone an object, but that 
+ * the object's class does not implement the <code>Cloneable</code> 
+ * interface. 
+ * <p>
+ * Applications that override the <code>clone</code> method can also 
+ * throw this exception to indicate that an object could not or 
+ * should not be cloned.
+ *
+ * @author  unascribed
+ * @version 1.5, 12/12/01
+ * @see     java.lang.Cloneable
+ * @see     java.lang.Object#clone()
+ * @since   JDK1.0
+ */
+
+public
+class CloneNotSupportedException extends Exception {
+    /**
+     * Constructs a <code>CloneNotSupportedException</code> with no 
+     * detail message. 
+     *
+     * @since   JDK1.0
+     */
+    public CloneNotSupportedException() {
+	super();
+    }
+
+    /**
+     * Constructs a <code>CloneNotSupportedException</code> with the 
+     * specified detail message. 
+     *
+     * @param   s   the detail message.
+     * @since   JDK1.0
+     */
+    public CloneNotSupportedException(String s) {
+	super(s);
+    }
+}

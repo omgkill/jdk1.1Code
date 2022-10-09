@@ -1,0 +1,21 @@
+#!/bin/sh
+
+#
+# @(#)javap.sh	1.8 01/12/12
+#
+# Copyright 2002 Sun Microsystems, Inc. All rights reserved.
+# SUN PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
+#
+
+#
+# Copyright (c) 1997-8 by Sun Microsystems, Inc.
+# All rights reserved.
+#
+# source a script that extracts RUNTIME_ARGS and APP_ARGS 
+# 
+. "`dirname \"$0\"`"/.extract_args 
+
+#
+# Run the disassembler
+#
+eval exec \"`dirname "$0"`\"/java -ms8m "$RUNTIME_ARGS" sun.tools.javap.JavaP "$APP_ARGS"
